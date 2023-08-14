@@ -172,12 +172,29 @@ selected_character_label = None  # Global variable for the label displaying the 
 
 def enter_game():
     name = name_entry.get().strip()
-    if name and name.isalpha():
-        messagebox.showinfo(title="Login Success", message=f"Welcome, {name}!")
-        window.withdraw()  # Hide the login window
-        create_character_selection_buttons()  # Show character selection buttons
+    
+    #If my name: Gabriel (print "Welcome Creator!" & If Mr Tan (print "Welcome Teacher"))
+    if name == 'Gabriel' and name.isalpha():
+        print("True")
+        messagebox.showinfo(title="Login Success", message=f"Welcome Creator!")
+        window.withdraw() #hide login window
+        create_character_selection_buttons() #Show char. selection buttons
+        
+    elif name == 'Mrtan' and name.isalpha():
+        print("True")
+        messagebox.showinfo(title="Login Success", message=f"Welcome Teacher!")
+        window.withdraw() #hide login window
+        create_character_selection_buttons() #Show char. selection buttons
+    
+    
+    #if name and name.isalpha():
+    #    messagebox.showinfo(title="Login Success", message=f"Welcome, {name}!")
+    #    window.withdraw()  # Hide the login window
+    #    create_character_selection_buttons()  # Show character selection buttons
     else:
         messagebox.showerror(title="Error", message="Please enter a valid name containing only alphabetic characters.")
+        
+        
 
 def create_character_selection_buttons():  # Character Choice Window
     global character_selection_window, selected_character_label  # Declare selected_character_label as global
